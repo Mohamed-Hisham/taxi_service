@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase;de.prob.units.mchBase" org.eventb.texttools.text_lastmodified="1387023643066" org.eventb.texttools.text_representation="context Taxi_Context&#10;&#10;sets TAXI // Carrier set of taxis&#10;     BOOKING // Carrier set of Bookings&#10;     CUSTOMER // Carrier set of Customers&#10;     LOCATION // Carrier set of Locations&#10;     TRIP_TYPE // Carrier set of a booking trip type&#10;     PRIORITY // Carrier set of a booking priority&#10;     STATUS // Carrier set of a booking status&#10;     WARNING // Carrier set of warnings of the system&#10;     RESPONSE_TYPE // Carrier set of a booking response type&#10;     CAPABILITY// Carrier set of taxis and booking capability&#10;&#10;constants empty short long // Trip types empty: initialization, short, long&#10;&#9;&#9;  full_response reduced_response // Response Types&#10;&#9;&#9;  high normal // Priority Types&#10;&#9;&#9;  open // Default status for a newly created booking&#10;&#9;&#9;  pending // When the booking is in thw waiting list&#10;&#9;&#9;  accept //  When the booking has been accepted&#10;&#9;&#9;  decline // When the booking has been declined&#10;&#9;&#9;  coming // The driver notifies that he is going to the customer&#10;&#9;&#9;  picked // The driver notifies that he has picked the customer&#10;&#9;&#9;  delivered // The driver notifies that he has delivered the customer&#10;&#9;&#9;  distance // function to model the distance between 2 locations&#10;&#10;axioms&#10;  @axm1 partition(TRIP_TYPE, {short}, {long}, {empty})&#10;  @axm2 partition(PRIORITY, {high}, {normal})&#10;  @axm3 partition(STATUS, {open}, {pending}, {accept}, {decline}, {coming}, {picked}, {delivered})&#10;  @axm4 partition(RESPONSE_TYPE, {full_response}, {reduced_response})&#10;  @axm5 distance ∈ (LOCATION × LOCATION) → ℕ1   // modelling the distance between 2 locations and outputs a number&#10;end" version="3">
+<org.eventb.core.carrierSet name="'" org.eventb.core.comment="Carrier set of taxis" org.eventb.core.identifier="TAXI"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.comment="Carrier set of Bookings" org.eventb.core.identifier="BOOKING"/>
+<org.eventb.core.carrierSet name=")" org.eventb.core.comment="Carrier set of Customers" org.eventb.core.identifier="CUSTOMER"/>
+<org.eventb.core.carrierSet name="*" org.eventb.core.comment="Carrier set of Locations" org.eventb.core.identifier="LOCATION"/>
+<org.eventb.core.carrierSet name="+" org.eventb.core.comment="Carrier set of a booking trip type" org.eventb.core.identifier="TRIP_TYPE"/>
+<org.eventb.core.carrierSet name="," org.eventb.core.comment="Carrier set of a booking priority" org.eventb.core.identifier="PRIORITY"/>
+<org.eventb.core.carrierSet name="-" org.eventb.core.comment="Carrier set of a booking status" org.eventb.core.identifier="STATUS"/>
+<org.eventb.core.carrierSet name="." org.eventb.core.comment="Carrier set of warnings of the system" org.eventb.core.identifier="WARNING"/>
+<org.eventb.core.carrierSet name="/" org.eventb.core.comment="Carrier set of a booking response type" org.eventb.core.identifier="RESPONSE_TYPE"/>
+<org.eventb.core.constant name="_QBu_MGRIEeOMwK6AbUC7eA" org.eventb.core.identifier="empty"/>
+<org.eventb.core.constant name="0" org.eventb.core.identifier="short"/>
+<org.eventb.core.constant name="1" org.eventb.core.comment="Trip types empty: initialization, short, long" org.eventb.core.identifier="long"/>
+<org.eventb.core.constant name="2" org.eventb.core.identifier="full_response"/>
+<org.eventb.core.constant name="3" org.eventb.core.comment="Response Types" org.eventb.core.identifier="reduced_response"/>
+<org.eventb.core.constant name="4" org.eventb.core.identifier="high"/>
+<org.eventb.core.constant name="5" org.eventb.core.comment="Priority Types" org.eventb.core.identifier="normal"/>
+<org.eventb.core.constant name="6" org.eventb.core.comment="Default status for a newly created booking" org.eventb.core.identifier="open"/>
+<org.eventb.core.constant name="_EO2OUGP4EeOMwK6AbUC7eA" org.eventb.core.comment="When the booking is in thw waiting list" org.eventb.core.identifier="pending"/>
+<org.eventb.core.constant name="_JkpSEGH6EeOMZ_9HrMlueQ" org.eventb.core.comment="When the booking has been accepted" org.eventb.core.identifier="accept"/>
+<org.eventb.core.constant name="_JkpSEWH6EeOMZ_9HrMlueQ" org.eventb.core.comment="When the booking has been declined" org.eventb.core.identifier="decline"/>
+<org.eventb.core.constant name="7" org.eventb.core.comment="The driver notifies that he is going to the customer" org.eventb.core.identifier="coming"/>
+<org.eventb.core.constant name="8" org.eventb.core.comment="The driver notifies that he has picked the customer" org.eventb.core.identifier="picked"/>
+<org.eventb.core.constant name="9" org.eventb.core.comment="The driver notifies that he has delivered the customer" org.eventb.core.identifier="delivered"/>
+<org.eventb.core.axiom name=":" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(TRIP_TYPE, {short}, {long}, {empty})"/>
+<org.eventb.core.axiom name=";" org.eventb.core.label="axm2" org.eventb.core.predicate="partition(PRIORITY, {high}, {normal})"/>
+<org.eventb.core.axiom name="=" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(STATUS, {open}, {pending}, {accept}, {decline}, {coming}, {picked}, {delivered})"/>
+<org.eventb.core.axiom name="&gt;" org.eventb.core.label="axm4" org.eventb.core.predicate="partition(RESPONSE_TYPE, {full_response}, {reduced_response})"/>
+<org.eventb.core.carrierSet name="_kHC0QGJeEeOMZ_9HrMlueQ" org.eventb.core.comment="Carrier set of taxis and booking capability" org.eventb.core.identifier="CAPABILITY"/>
+<org.eventb.core.axiom name="_j_rE8GSjEeOMwK6AbUC7eA" org.eventb.core.comment="modelling the distance between 2 locations and outputs a number" org.eventb.core.label="axm5" org.eventb.core.predicate="distance ∈ (LOCATION × LOCATION) → ℕ1"/>
+<org.eventb.core.constant name="_lzRwkGSjEeOMwK6AbUC7eA" org.eventb.core.comment="function to model the distance between 2 locations" org.eventb.core.identifier="distance"/>
+</org.eventb.core.contextFile>

@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="36">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="BOOKING" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="CAPABILITY" org.eventb.core.type="ℙ(CAPABILITY)"/>
+<org.eventb.core.poIdentifier name="CUSTOMER" org.eventb.core.type="ℙ(CUSTOMER)"/>
+<org.eventb.core.poIdentifier name="LOCATION" org.eventb.core.type="ℙ(LOCATION)"/>
+<org.eventb.core.poIdentifier name="PRIORITY" org.eventb.core.type="ℙ(PRIORITY)"/>
+<org.eventb.core.poIdentifier name="RESPONSE_TYPE" org.eventb.core.type="ℙ(RESPONSE_TYPE)"/>
+<org.eventb.core.poIdentifier name="STATUS" org.eventb.core.type="ℙ(STATUS)"/>
+<org.eventb.core.poIdentifier name="TAXI" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="TRIP_TYPE" org.eventb.core.type="ℙ(TRIP_TYPE)"/>
+<org.eventb.core.poIdentifier name="WARNING" org.eventb.core.type="ℙ(WARNING)"/>
+<org.eventb.core.poIdentifier name="accept" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="coming" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="decline" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="delivered" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="distance" org.eventb.core.type="ℙ(LOCATION×LOCATION×ℤ)"/>
+<org.eventb.core.poIdentifier name="empty" org.eventb.core.type="TRIP_TYPE"/>
+<org.eventb.core.poIdentifier name="full_response" org.eventb.core.type="RESPONSE_TYPE"/>
+<org.eventb.core.poIdentifier name="high" org.eventb.core.type="PRIORITY"/>
+<org.eventb.core.poIdentifier name="long" org.eventb.core.type="TRIP_TYPE"/>
+<org.eventb.core.poIdentifier name="normal" org.eventb.core.type="PRIORITY"/>
+<org.eventb.core.poIdentifier name="open" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="pending" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="picked" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="reduced_response" org.eventb.core.type="RESPONSE_TYPE"/>
+<org.eventb.core.poIdentifier name="short" org.eventb.core.type="TRIP_TYPE"/>
+<org.eventb.core.poPredicate name="reduced_responsf" org.eventb.core.predicate="partition(TRIP_TYPE,{short},{long},{empty})" org.eventb.core.source="/TaxiService/Taxi_Context.buc|org.eventb.core.contextFile#Taxi_Context|org.eventb.core.axiom#:"/>
+<org.eventb.core.poPredicate name="reduced_responsg" org.eventb.core.predicate="partition(PRIORITY,{high},{normal})" org.eventb.core.source="/TaxiService/Taxi_Context.buc|org.eventb.core.contextFile#Taxi_Context|org.eventb.core.axiom#;"/>
+<org.eventb.core.poPredicate name="reduced_responsh" org.eventb.core.predicate="partition(STATUS,{open},{pending},{accept},{decline},{coming},{picked},{delivered})" org.eventb.core.source="/TaxiService/Taxi_Context.buc|org.eventb.core.contextFile#Taxi_Context|org.eventb.core.axiom#="/>
+<org.eventb.core.poPredicate name="reduced_responsi" org.eventb.core.predicate="partition(RESPONSE_TYPE,{full_response},{reduced_response})" org.eventb.core.source="/TaxiService/Taxi_Context.buc|org.eventb.core.contextFile#Taxi_Context|org.eventb.core.axiom#&gt;"/>
+<org.eventb.core.poPredicate name="reduced_responsj" org.eventb.core.predicate="distance∈LOCATION × LOCATION → ℕ1" org.eventb.core.source="/TaxiService/Taxi_Context.buc|org.eventb.core.contextFile#Taxi_Context|org.eventb.core.axiom#_j_rE8GSjEeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="accepted_bookings" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="booking_capability" org.eventb.core.type="ℙ(BOOKING×CAPABILITY)"/>
+<org.eventb.core.poIdentifier name="booking_customer" org.eventb.core.type="ℙ(BOOKING×CUSTOMER)"/>
+<org.eventb.core.poIdentifier name="booking_location" org.eventb.core.type="ℙ(BOOKING×LOCATION)"/>
+<org.eventb.core.poIdentifier name="booking_number_of_passengers" org.eventb.core.type="ℙ(BOOKING×ℤ)"/>
+<org.eventb.core.poIdentifier name="booking_priority" org.eventb.core.type="ℙ(BOOKING×PRIORITY)"/>
+<org.eventb.core.poIdentifier name="booking_response" org.eventb.core.type="ℙ(BOOKING×RESPONSE_TYPE)"/>
+<org.eventb.core.poIdentifier name="booking_status" org.eventb.core.type="ℙ(BOOKING×STATUS)"/>
+<org.eventb.core.poIdentifier name="booking_taxi" org.eventb.core.type="ℙ(BOOKING×TAXI)"/>
+<org.eventb.core.poIdentifier name="booking_triptype" org.eventb.core.type="ℙ(BOOKING×TRIP_TYPE)"/>
+<org.eventb.core.poIdentifier name="bookings" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="bookings_pointer" org.eventb.core.type="ℙ(BOOKING×ℤ)"/>
+<org.eventb.core.poIdentifier name="bookings_queue" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="busy_taxis" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="customer_location" org.eventb.core.type="ℙ(CUSTOMER×LOCATION)"/>
+<org.eventb.core.poIdentifier name="declined_bookings" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="driver_declined" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="nearby_taxis_pool" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="nonallocation_threshold" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="nonallocation_warnings" org.eventb.core.type="ℙ(WARNING)"/>
+<org.eventb.core.poIdentifier name="penalized_taxis" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="reduced_threshold" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="reduced_warnings" org.eventb.core.type="ℙ(WARNING)"/>
+<org.eventb.core.poIdentifier name="registered_taxis" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="taxi_capability" org.eventb.core.type="ℙ(TAXI×CAPABILITY)"/>
+<org.eventb.core.poIdentifier name="taxi_location" org.eventb.core.type="ℙ(TAXI×LOCATION)"/>
+<org.eventb.core.poIdentifier name="waiting_list" org.eventb.core.type="ℙ(BOOKING×CUSTOMER)"/>
+<org.eventb.core.poPredicate name="booking_number_of_passengert" org.eventb.core.predicate="registered_taxis⊆TAXI" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#A"/>
+<org.eventb.core.poPredicate name="booking_number_of_passengeru" org.eventb.core.predicate="busy_taxis⊆TAXI" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#_UwN-EF6WEeOM0rIYQk1T5Q"/>
+<org.eventb.core.poPredicate name="booking_number_of_passengerv" org.eventb.core.predicate="penalized_taxis⊆TAXI" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#B"/>
+<org.eventb.core.poPredicate name="booking_number_of_passengerw" org.eventb.core.predicate="bookings⊆BOOKING" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#D"/>
+<org.eventb.core.poPredicate name="booking_number_of_passengerx" org.eventb.core.predicate="accepted_bookings⊆BOOKING" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#E"/>
+<org.eventb.core.poPredicate name="booking_number_of_passengery" org.eventb.core.predicate="declined_bookings⊆BOOKING" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#F"/>
+<org.eventb.core.poPredicate name="booking_number_of_passengerz" org.eventb.core.predicate="booking_customer∈BOOKING ⇸ CUSTOMER" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#_DdKP8F6YEeOM0rIYQk1T5Q"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenger{" org.eventb.core.predicate="booking_status∈BOOKING ⤔ STATUS" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#H"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenger|" org.eventb.core.predicate="booking_priority∈BOOKING ⤔ PRIORITY" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#I"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenger}" org.eventb.core.predicate="booking_response∈BOOKING ⤔ RESPONSE_TYPE" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#_UPZwgWSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenger~" org.eventb.core.predicate="booking_taxi∈BOOKING ⤔ registered_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#_gi8lQV6WEeOM0rIYQk1T5Q"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenges'" org.eventb.core.predicate="booking_number_of_passengers∈BOOKING ⤔ 1 ‥ 5" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#_UPZwgmSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenges(" org.eventb.core.predicate="waiting_list∈accepted_bookings ⇸ CUSTOMER" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#M"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenges)" org.eventb.core.predicate="reduced_threshold∈0 ‥ 100" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#N"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenges*" org.eventb.core.predicate="nonallocation_threshold∈0 ‥ 100" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#O"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenges+" org.eventb.core.predicate="reduced_warnings⊆WARNING" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#P"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenges," org.eventb.core.predicate="nonallocation_warnings⊆WARNING" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#Q"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenges-" org.eventb.core.predicate="taxi_capability∈registered_taxis ↔ CAPABILITY" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#R"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenges." org.eventb.core.predicate="booking_capability∈bookings ↔ CAPABILITY" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#S"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenges/" org.eventb.core.predicate="nearby_taxis_pool⊆registered_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#_2xwGgWHHEeOMZ_9HrMlueQ"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenges0" org.eventb.core.predicate="bookings_queue⊆bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#_RpAWMWJfEeOMZ_9HrMlueQ"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenges1" org.eventb.core.predicate="bookings_pointer∈bookings_queue ↣ ℕ1" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#_TUsSQGPbEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenges2" org.eventb.core.predicate="finite(ran(bookings_pointer))" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#_j4dmkGPbEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenges3" org.eventb.core.predicate="finite(booking_response)" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#_iorgEWPjEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="booking_number_of_passenges4" org.eventb.core.predicate="driver_declined∈ℕ" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.invariant#_08KKkWP7EeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/inv24/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTALLHYPbooking_number_of_passengert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(BOOKING×LOCATION))∈BOOKING ⤔ LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_e5dfcGSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AB"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_e5dfcGSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poSequent#INITIALISATION\/inv24\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv25/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTALLHYPbooking_number_of_passengert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(TAXI×LOCATION))∈(∅ ⦂ ℙ(TAXI)) ⤔ LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_e5dfcWSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AB"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_e5dfcWSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poSequent#INITIALISATION\/inv25\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv26/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTALLHYPbooking_number_of_passengert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(CUSTOMER×LOCATION))∈CUSTOMER ⤔ LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgwqwGSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AB"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgwqwGSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poSequent#INITIALISATION\/inv26\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv27/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="4">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTALLHYPbooking_number_of_passengert"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(BOOKING×TRIP_TYPE))∈BOOKING ⤔ TRIP_TYPE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgxR0GSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AB"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgxR0GSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poSequent#INITIALISATION\/inv27\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passengert" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="nonallocation_threshold'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="bookings_queue'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="busy_taxis'" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="accepted_bookings'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="nearby_taxis_pool'" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="booking_status'" org.eventb.core.type="ℙ(BOOKING×STATUS)"/>
+<org.eventb.core.poIdentifier name="taxi_capability'" org.eventb.core.type="ℙ(TAXI×CAPABILITY)"/>
+<org.eventb.core.poIdentifier name="declined_bookings'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="registered_taxis'" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="booking_taxi'" org.eventb.core.type="ℙ(BOOKING×TAXI)"/>
+<org.eventb.core.poIdentifier name="reduced_threshold'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="booking_triptype'" org.eventb.core.type="ℙ(BOOKING×TRIP_TYPE)"/>
+<org.eventb.core.poIdentifier name="nonallocation_warnings'" org.eventb.core.type="ℙ(WARNING)"/>
+<org.eventb.core.poIdentifier name="bookings_pointer'" org.eventb.core.type="ℙ(BOOKING×ℤ)"/>
+<org.eventb.core.poIdentifier name="driver_declined'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="booking_location'" org.eventb.core.type="ℙ(BOOKING×LOCATION)"/>
+<org.eventb.core.poIdentifier name="booking_number_of_passengers'" org.eventb.core.type="ℙ(BOOKING×ℤ)"/>
+<org.eventb.core.poIdentifier name="booking_priority'" org.eventb.core.type="ℙ(BOOKING×PRIORITY)"/>
+<org.eventb.core.poIdentifier name="reduced_warnings'" org.eventb.core.type="ℙ(WARNING)"/>
+<org.eventb.core.poIdentifier name="bookings'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="waiting_list'" org.eventb.core.type="ℙ(BOOKING×CUSTOMER)"/>
+<org.eventb.core.poIdentifier name="booking_response'" org.eventb.core.type="ℙ(BOOKING×RESPONSE_TYPE)"/>
+<org.eventb.core.poIdentifier name="booking_customer'" org.eventb.core.type="ℙ(BOOKING×CUSTOMER)"/>
+<org.eventb.core.poIdentifier name="booking_capability'" org.eventb.core.type="ℙ(BOOKING×CAPABILITY)"/>
+<org.eventb.core.poIdentifier name="taxi_location'" org.eventb.core.type="ℙ(TAXI×LOCATION)"/>
+<org.eventb.core.poIdentifier name="customer_location'" org.eventb.core.type="ℙ(CUSTOMER×LOCATION)"/>
+<org.eventb.core.poIdentifier name="penalized_taxis'" org.eventb.core.type="ℙ(TAXI)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passengert" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passengert" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="RegisterTaxi/inv25/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="34">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTALLHYPbooking_number_of_passengeru"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="taxi_location∈registered_taxis∪{taxi} ⤔ LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_e5dfcWSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0ow"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AC"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_e5dfcWSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poSequent#RegisterTaxi\/inv25\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passengeru" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="capabilities_offered" org.eventb.core.type="ℙ(CAPABILITY)"/>
+<org.eventb.core.poIdentifier name="taxi_capability'" org.eventb.core.type="ℙ(TAXI×CAPABILITY)"/>
+<org.eventb.core.poIdentifier name="registered_taxis'" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="taxi" org.eventb.core.type="TAXI"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passengeru" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passengeru" org.eventb.core.poStamp="34">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="taxi∈TAXI" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0ow|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="taxi∉registered_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0ow|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="capabilities_offered⊆CAPABILITY" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0ow|org.eventb.core.guard#_zMeF0GJfEeOMZ_9HrMlueQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="Deregister/inv25/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTALLHYPbooking_number_of_passengerv"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{taxi} ⩤ taxi_location∈registered_taxis ∖ {taxi} ⤔ LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_e5dfcWSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0ox"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AD"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_e5dfcWSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poSequent#Deregister\/inv25\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passengerv" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="registered_taxis'" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="taxi" org.eventb.core.type="TAXI"/>
+<org.eventb.core.poIdentifier name="taxi_location'" org.eventb.core.type="ℙ(TAXI×LOCATION)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passengerv" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passengerv" org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="taxi∈registered_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0ox|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="taxi∉busy_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0ox|org.eventb.core.guard#_vg2vgGSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="taxi∉ran(booking_taxi)" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0ox|org.eventb.core.guard#_0UHpsF6WEeOM0rIYQk1T5Q"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="AddBooking/inv24/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="10">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTALLHYPbooking_number_of_passengerw"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="booking_location{booking ↦ destination_location}∈BOOKING ⤔ LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_e5dfcGSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AE"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_e5dfcGSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poSequent#AddBooking\/inv24\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="AddBooking/inv26/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="10">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTALLHYPbooking_number_of_passengerw"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="customer_location{customer ↦ pickup_location}∈CUSTOMER ⤔ LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgwqwGSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AE"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgwqwGSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poSequent#AddBooking\/inv26\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="AddBooking/inv27/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="10">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTALLHYPbooking_number_of_passengerw"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="booking_triptype{booking ↦ triptype}∈BOOKING ⤔ TRIP_TYPE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgxR0GSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AE"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgxR0GSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poSequent#AddBooking\/inv27\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passengerw" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="9">
+<org.eventb.core.poIdentifier name="status" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="booking_status'" org.eventb.core.type="ℙ(BOOKING×STATUS)"/>
+<org.eventb.core.poIdentifier name="pickup_location" org.eventb.core.type="LOCATION"/>
+<org.eventb.core.poIdentifier name="priority" org.eventb.core.type="PRIORITY"/>
+<org.eventb.core.poIdentifier name="destination_location" org.eventb.core.type="LOCATION"/>
+<org.eventb.core.poIdentifier name="booking_triptype'" org.eventb.core.type="ℙ(BOOKING×TRIP_TYPE)"/>
+<org.eventb.core.poIdentifier name="booking_location'" org.eventb.core.type="ℙ(BOOKING×LOCATION)"/>
+<org.eventb.core.poIdentifier name="booking_number_of_passengers'" org.eventb.core.type="ℙ(BOOKING×ℤ)"/>
+<org.eventb.core.poIdentifier name="booking_priority'" org.eventb.core.type="ℙ(BOOKING×PRIORITY)"/>
+<org.eventb.core.poIdentifier name="bookings'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="booking_customer'" org.eventb.core.type="ℙ(BOOKING×CUSTOMER)"/>
+<org.eventb.core.poIdentifier name="booking_capability'" org.eventb.core.type="ℙ(BOOKING×CAPABILITY)"/>
+<org.eventb.core.poIdentifier name="customer_location'" org.eventb.core.type="ℙ(CUSTOMER×LOCATION)"/>
+<org.eventb.core.poIdentifier name="number_of_passengers" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="triptype" org.eventb.core.type="TRIP_TYPE"/>
+<org.eventb.core.poIdentifier name="capabilities_needed" org.eventb.core.type="ℙ(CAPABILITY)"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+<org.eventb.core.poIdentifier name="customer" org.eventb.core.type="CUSTOMER"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passengerw" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passengerw" org.eventb.core.poStamp="9">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking∈BOOKING" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#_gdbjMF6CEeOM0rIYQk1T5Q"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="booking∉bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#_gdbjMV6CEeOM0rIYQk1T5Q"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="booking∉accepted_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#."/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="booking∉declined_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#\/"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="booking∉dom(booking_number_of_passengers)" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#_3u5vAGSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="booking∉dom(booking_taxi)" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#1"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="booking∉dom(booking_customer)" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#2"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="booking∉dom(booking_priority)" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#3"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="booking∉dom(booking_response)" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#4"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="booking∉dom(booking_status)" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#5"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="status∈STATUS" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#6"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="status∈{open}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#_3u6WEGSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="priority∈PRIORITY" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#8"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="priority∈{high}∨priority∈{normal}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#_PLO-oV6uEeOeWYtchmq-SA"/>
+<org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="number_of_passengers∈1 ‥ 5" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#:"/>
+<org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="customer∈CUSTOMER" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#;"/>
+<org.eventb.core.poPredicate name="PRD16" org.eventb.core.predicate="triptype∈TRIP_TYPE" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#_bElMAV5-EeOM0rIYQk1T5Q"/>
+<org.eventb.core.poPredicate name="PRD17" org.eventb.core.predicate="triptype∈{empty}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#_3u6WEWSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD18" org.eventb.core.predicate="capabilities_needed⊆CAPABILITY" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#_-jMOEGG9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD19" org.eventb.core.predicate="registered_taxis≠(∅ ⦂ ℙ(TAXI))" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o{|org.eventb.core.guard#_3u69IGSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD20" org.eventb.core.predicate="booking∉dom(booking_location)" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AE|org.eventb.core.guard#_1s7QMGSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD21" org.eventb.core.predicate="destination_location∈LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AE|org.eventb.core.guard#_HRbMgGQOEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD22" org.eventb.core.predicate="pickup_location∈LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AE|org.eventb.core.guard#_1s7QMWSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD23" org.eventb.core.predicate="destination_location≠pickup_location" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AE|org.eventb.core.guard#_1s7QMmSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD24" org.eventb.core.predicate="booking∉dom(booking_triptype)" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AE|org.eventb.core.guard#_1s7QM2SrEeO0z68jQ4pw7Q"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="setTripTypetoShort/grd9/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="13">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTHYPbooking_number_of_passengerx."/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="customer_pickup ↦ customer_destination∈dom(distance)∧distance∈LOCATION × LOCATION ⇸ ℤ" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_wsaEcmG9EeOSy_oee9yKOA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_wsaEcmG9EeOSy_oee9yKOA"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTHYPbooking_number_of_passengerx."/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="setTripTypetoShort/inv27/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="13">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTALLHYPbooking_number_of_passengerx"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="booking_triptype{booking ↦ type}∈BOOKING ⤔ TRIP_TYPE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgxR0GSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgxR0GSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poSequent#setTripTypetoShort\/inv27\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passengerx" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="triptypeold" org.eventb.core.type="TRIP_TYPE"/>
+<org.eventb.core.poIdentifier name="booking_triptype'" org.eventb.core.type="ℙ(BOOKING×TRIP_TYPE)"/>
+<org.eventb.core.poIdentifier name="type" org.eventb.core.type="TRIP_TYPE"/>
+<org.eventb.core.poIdentifier name="customer_pickup" org.eventb.core.type="LOCATION"/>
+<org.eventb.core.poIdentifier name="customer_destination" org.eventb.core.type="LOCATION"/>
+<org.eventb.core.poIdentifier name="trip_length" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+<org.eventb.core.poIdentifier name="customer" org.eventb.core.type="CUSTOMER"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPbooking_number_of_passengerx." org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passengerx" org.eventb.core.poStamp="12">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="customer∈CUSTOMER" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_wsZdZWG9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="booking∈bookings" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_wsZdZmG9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="booking ↦ customer∈booking_customer" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_wsZdZ2G9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="customer ↦ customer_pickup∈customer_location" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_wsZdaGG9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="booking ↦ customer_destination∈booking_location" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_I0rkMGSsEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="customer_pickup∈LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_I0sLQGSsEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="customer_destination∈LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_I0sLQWSsEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="trip_length∈ℕ1" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_wsaEc2G9EeOSy_oee9yKOA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passengerx" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTHYPbooking_number_of_passengerx." org.eventb.core.poStamp="12">
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="trip_length=distance(customer_pickup ↦ customer_destination)" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_wsaEcmG9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="trip_length&lt;50" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_wsaEdGG9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="type∈TRIP_TYPE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_wsaEdWG9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="type∈{short}" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_wsaEdmG9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="triptypeold∈TRIP_TYPE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_LJzW0GQPEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="triptypeold∈{empty}" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_Dr5U0GRREeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="booking ↦ triptypeold∈booking_triptype" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AF|org.eventb.core.guard#_Dr574GRREeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="setTripTypetoLong/grd9/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTHYPbooking_number_of_passengery+"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="customer_pickup ↦ customer_destination∈dom(distance)∧distance∈LOCATION × LOCATION ⇸ ℤ" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_wsbSk2G9EeOSy_oee9yKOA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_wsbSk2G9EeOSy_oee9yKOA"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTHYPbooking_number_of_passengery+"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="setTripTypetoLong/inv27/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTALLHYPbooking_number_of_passengery"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="booking_triptype{booking ↦ type}∈BOOKING ⤔ TRIP_TYPE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgxR0GSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgxR0GSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poSequent#setTripTypetoLong\/inv27\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passengery" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="triptypeold" org.eventb.core.type="TRIP_TYPE"/>
+<org.eventb.core.poIdentifier name="booking_triptype'" org.eventb.core.type="ℙ(BOOKING×TRIP_TYPE)"/>
+<org.eventb.core.poIdentifier name="type" org.eventb.core.type="TRIP_TYPE"/>
+<org.eventb.core.poIdentifier name="customer_pickup" org.eventb.core.type="LOCATION"/>
+<org.eventb.core.poIdentifier name="customer_destination" org.eventb.core.type="LOCATION"/>
+<org.eventb.core.poIdentifier name="trip_length" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+<org.eventb.core.poIdentifier name="customer" org.eventb.core.type="CUSTOMER"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPbooking_number_of_passengery+" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passengery" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="customer∈CUSTOMER" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_wsarhmG9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="booking∈bookings" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_wsarh2G9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="booking ↦ customer∈booking_customer" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_wsariGG9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="customer ↦ customer_pickup∈customer_location" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_wsariWG9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="trip_length∈ℕ1" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_moZT8GRREeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passengery" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTHYPbooking_number_of_passengery+" org.eventb.core.poStamp="16">
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="trip_length=distance(customer_pickup ↦ customer_destination)" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_wsbSk2G9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="trip_length≥50" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_wsbSlWG9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="type∈TRIP_TYPE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_wsbSlmG9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="type∈{long}" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_wsbSl2G9EeOSy_oee9yKOA"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="triptypeold∈TRIP_TYPE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_OPXa8GROEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="triptypeold∈{empty}" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_OPXa8WROEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="booking ↦ triptypeold∈booking_triptype" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_OPXa8mROEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="booking ↦ customer_destination∈booking_location" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_lIDTMGSsEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="customer_pickup∈LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_lIDTMWSsEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="customer_destination∈LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AG|org.eventb.core.guard#_lIDTMmSsEeO0z68jQ4pw7Q"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="SetCurrentTaxiLocation/inv25/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTALLHYPbooking_number_of_passengerz"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="taxi_location{taxi ↦ location}∈registered_taxis ⤔ LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_e5dfcWSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_7Ha6IGPTEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_e5dfcWSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poSequent#SetCurrentTaxiLocation\/inv25\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passengerz" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="taxi" org.eventb.core.type="TAXI"/>
+<org.eventb.core.poIdentifier name="location" org.eventb.core.type="LOCATION"/>
+<org.eventb.core.poIdentifier name="taxi_location'" org.eventb.core.type="ℙ(TAXI×LOCATION)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passengerz" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passengerz" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="taxi∈registered_taxis" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_7Ha6IGPTEeOMwK6AbUC7eA|org.eventb.core.guard#_Kl9rwmPUEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="location∈LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_7Ha6IGPTEeOMwK6AbUC7eA|org.eventb.core.guard#_Kl-S0GPUEeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenger{" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="taxiLocation" org.eventb.core.type="LOCATION"/>
+<org.eventb.core.poIdentifier name="customerLocation" org.eventb.core.type="LOCATION"/>
+<org.eventb.core.poIdentifier name="nearby_taxis_pool'" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="length" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="taxi" org.eventb.core.type="TAXI"/>
+<org.eventb.core.poIdentifier name="customer" org.eventb.core.type="CUSTOMER"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenger{" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenger{" org.eventb.core.poStamp="13">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="taxi∈registered_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_f_aOYGP8EeOMwK6AbUC7eA|org.eventb.core.guard#_f_a1cmP8EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="taxi∉penalized_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_f_aOYGP8EeOMwK6AbUC7eA|org.eventb.core.guard#_f_a1c2P8EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="taxi∉busy_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_f_aOYGP8EeOMwK6AbUC7eA|org.eventb.core.guard#_f_a1dGP8EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="customer∈CUSTOMER" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_f_aOYGP8EeOMwK6AbUC7eA|org.eventb.core.guard#_CZWfgGSsEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="taxiLocation∈LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_GJr1EGPREeOMwK6AbUC7eA|org.eventb.core.guard#_gM_HYGSsEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="customerLocation∈LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_GJr1EGPREeOMwK6AbUC7eA|org.eventb.core.guard#_S6UkFGPTEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="taxi ↦ taxiLocation∈taxi_location" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_GJr1EGPREeOMwK6AbUC7eA|org.eventb.core.guard#_S6UkFWPTEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="customer ↦ customerLocation∈customer_location" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_GJr1EGPREeOMwK6AbUC7eA|org.eventb.core.guard#_S6UkFmPTEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="length∈ℕ1" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_GJr1EGPREeOMwK6AbUC7eA|org.eventb.core.guard#_q6NPMGPUEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="length≤20" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_GJr1EGPREeOMwK6AbUC7eA|org.eventb.core.guard#_gM_ucGSsEeO0z68jQ4pw7Q"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenger|" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="bookings_queue'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="pointer" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="bookings_pointer'" org.eventb.core.type="ℙ(BOOKING×ℤ)"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenger|" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenger\|" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking∈bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_15gCwGPeEeOMwK6AbUC7eA|org.eventb.core.guard#_3WkSEGSsEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="booking∉accepted_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_15gCwGPeEeOMwK6AbUC7eA|org.eventb.core.guard#_3WkSEWSsEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="pointer∈ℕ1" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_15gCwGPeEeOMwK6AbUC7eA|org.eventb.core.guard#_3WkSEmSsEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="bookings_pointer≠(∅ ⦂ ℙ(BOOKING×ℤ))⇒pointer&gt;max(ran(bookings_pointer))" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_15gCwGPeEeOMwK6AbUC7eA|org.eventb.core.guard#_3WkSE2SsEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="pointer∉ran(bookings_pointer)" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_15gCwGPeEeOMwK6AbUC7eA|org.eventb.core.guard#_3WkSFGSsEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="¬(∃t⦂TAXI·t∈registered_taxis∧t∉ran(booking_taxi)∧booking_capability[{booking}]⊆taxi_capability[{t}])" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_15gCwGPeEeOMwK6AbUC7eA|org.eventb.core.guard#_3WkSFWSsEeO0z68jQ4pw7Q"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenger}" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="busy_taxis'" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="accepted_bookings'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="booking_taxi'" org.eventb.core.type="ℙ(BOOKING×TAXI)"/>
+<org.eventb.core.poIdentifier name="taxi" org.eventb.core.type="TAXI"/>
+<org.eventb.core.poIdentifier name="booking_response'" org.eventb.core.type="ℙ(BOOKING×RESPONSE_TYPE)"/>
+<org.eventb.core.poIdentifier name="response" org.eventb.core.type="RESPONSE_TYPE"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenger}" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenger}" org.eventb.core.poStamp="18">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking∈bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3yQ0GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT27Y2QHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="taxi∈nearby_taxis_pool" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3yQ0GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT27ZGQHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="taxi∉busy_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3yQ0GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT27ZWQHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="taxi∉penalized_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3yQ0GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT27ZmQHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="{taxi}∩ran(booking_taxi)=(∅ ⦂ ℙ(TAXI))" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3yQ0GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT27Z2QHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="response∈RESPONSE_TYPE" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3yQ0GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_7XOrIGSsEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="response∈{full_response}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3yQ0GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_D3yQ0mQGEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="booking∉bookings_queue" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3yQ0GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_D3yQ02QGEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="∀b⦂BOOKING·b∈bookings_queue⇒¬booking_capability[{booking}]⊆taxi_capability[{taxi}]" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3yQ0GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_D3y34GQGEeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenger~" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="bookings_queue'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="busy_taxis'" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="accepted_bookings'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="booking_taxi'" org.eventb.core.type="ℙ(BOOKING×TAXI)"/>
+<org.eventb.core.poIdentifier name="bookings_pointer'" org.eventb.core.type="ℙ(BOOKING×ℤ)"/>
+<org.eventb.core.poIdentifier name="taxi" org.eventb.core.type="TAXI"/>
+<org.eventb.core.poIdentifier name="booking_response'" org.eventb.core.type="ℙ(BOOKING×RESPONSE_TYPE)"/>
+<org.eventb.core.poIdentifier name="response" org.eventb.core.type="RESPONSE_TYPE"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenger~" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenger~" org.eventb.core.poStamp="19">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking∈bookings_queue" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y34mQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT3idmQHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="taxi∈nearby_taxis_pool" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y34mQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT3id2QHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="taxi∉busy_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y34mQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT3ieGQHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="taxi∉penalized_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y34mQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT3ieWQHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="{taxi}∩ran(booking_taxi)=(∅ ⦂ ℙ(TAXI))" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y34mQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT3iemQHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="response∈RESPONSE_TYPE" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y34mQGEeOMwK6AbUC7eA|org.eventb.core.guard#_D3y35GQGEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="response∈{full_response}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y34mQGEeOMwK6AbUC7eA|org.eventb.core.guard#_Mlo08GQKEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="∀b⦂BOOKING·b∈bookings_queue∧booking_capability[{b}]⊆taxi_capability[{taxi}]⇒bookings_pointer(booking)≤bookings_pointer(b)" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y34mQGEeOMwK6AbUC7eA|org.eventb.core.guard#_H5xigGSpEeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges'" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="30">
+<org.eventb.core.poIdentifier name="busy_taxis'" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="accepted_bookings'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="booking_taxi'" org.eventb.core.type="ℙ(BOOKING×TAXI)"/>
+<org.eventb.core.poIdentifier name="taxi" org.eventb.core.type="TAXI"/>
+<org.eventb.core.poIdentifier name="booking_response'" org.eventb.core.type="ℙ(BOOKING×RESPONSE_TYPE)"/>
+<org.eventb.core.poIdentifier name="response" org.eventb.core.type="RESPONSE_TYPE"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges'" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges'" org.eventb.core.poStamp="30">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking∈bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y35WQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT4JhmQHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="taxi∈nearby_taxis_pool" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y35WQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT4Jh2QHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="taxi∉busy_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y35WQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT4JiGQHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="taxi∉penalized_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y35WQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT4JiWQHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="{taxi}∩ran(booking_taxi)=(∅ ⦂ ℙ(TAXI))" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y35WQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT4JimQHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="response∈RESPONSE_TYPE" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y35WQGEeOMwK6AbUC7eA|org.eventb.core.guard#_H5ywoGSpEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="∀b⦂BOOKING·b∈bookings_queue⇒¬booking_capability[{booking}]⊆taxi_capability[{taxi}]" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y35WQGEeOMwK6AbUC7eA|org.eventb.core.guard#_CWb48WStEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="response∈{reduced_response}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y35WQGEeOMwK6AbUC7eA|org.eventb.core.guard#_FYAMgGStEeO0z68jQ4pw7Q"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges(" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="bookings_queue'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="busy_taxis'" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="accepted_bookings'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="booking_taxi'" org.eventb.core.type="ℙ(BOOKING×TAXI)"/>
+<org.eventb.core.poIdentifier name="bookings_pointer'" org.eventb.core.type="ℙ(BOOKING×ℤ)"/>
+<org.eventb.core.poIdentifier name="taxi" org.eventb.core.type="TAXI"/>
+<org.eventb.core.poIdentifier name="booking_response'" org.eventb.core.type="ℙ(BOOKING×RESPONSE_TYPE)"/>
+<org.eventb.core.poIdentifier name="response" org.eventb.core.type="RESPONSE_TYPE"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges(" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges(" org.eventb.core.poStamp="23">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking∈bookings_queue" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y36GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT4wlmQHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="taxi∈nearby_taxis_pool" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y36GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT4wl2QHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="taxi∉busy_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y36GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT4wmGQHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="taxi∉penalized_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y36GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT4wmWQHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="{taxi}∩ran(booking_taxi)=(∅ ⦂ ℙ(TAXI))" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y36GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_ZT4wmmQHEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="response∈RESPONSE_TYPE" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y36GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_6gR8oGQKEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="response∈{reduced_response}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y36GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_H5zXsGSpEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="∀b⦂BOOKING·b∈bookings_queue∧booking_capability[{b}]⊆taxi_capability[{taxi}]⇒bookings_pointer(booking)≤bookings_pointer(b)" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_D3y36GQGEeOMwK6AbUC7eA|org.eventb.core.guard#_LX5SYGStEeO0z68jQ4pw7Q"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges)" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="newStatus" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="status" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="booking_status'" org.eventb.core.type="ℙ(BOOKING×STATUS)"/>
+<org.eventb.core.poIdentifier name="bookings'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="triptype" org.eventb.core.type="TRIP_TYPE"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges)" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges)" org.eventb.core.poStamp="33">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking∈accepted_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_IWEgkGHCEeOMZ_9HrMlueQ|org.eventb.core.guard#_SeD9g2PhEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="status∈STATUS" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_IWEgkGHCEeOMZ_9HrMlueQ|org.eventb.core.guard#_SeD9hGPhEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="status∈{open}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_IWEgkGHCEeOMZ_9HrMlueQ|org.eventb.core.guard#_SeD9hWPhEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="newStatus∈STATUS" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_IWEgkGHCEeOMZ_9HrMlueQ|org.eventb.core.guard#_SeD9hmPhEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="newStatus∈{accept}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_IWEgkGHCEeOMZ_9HrMlueQ|org.eventb.core.guard#_SeD9h2PhEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="booking ↦ status∈booking_status" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_IWEgkGHCEeOMZ_9HrMlueQ|org.eventb.core.guard#_fPtEAGPhEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="triptype∈TRIP_TYPE" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_IWEgkGHCEeOMZ_9HrMlueQ|org.eventb.core.guard#_E5XeEGQQEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="triptype∈{empty}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_IWEgkGHCEeOMZ_9HrMlueQ|org.eventb.core.guard#_k4LCkWRIEeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges*" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="status" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="driver_declined'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="decline_boolean" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges*" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges*" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="decline_boolean∈ℕ" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_fvnh0GSfEeOMwK6AbUC7eA|org.eventb.core.guard#_fvoI4WSfEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="decline_boolean=0" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_fvnh0GSfEeOMwK6AbUC7eA|org.eventb.core.guard#_fvoI4mSfEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="booking∈accepted_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_fvnh0GSfEeOMwK6AbUC7eA|org.eventb.core.guard#_N0gKoWSgEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="status∈STATUS" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_fvnh0GSfEeOMwK6AbUC7eA|org.eventb.core.guard#_z2Si4GSkEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="status∈{accept}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_fvnh0GSfEeOMwK6AbUC7eA|org.eventb.core.guard#_z2Si4WSkEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="booking ↦ status∈booking_status" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_fvnh0GSfEeOMwK6AbUC7eA|org.eventb.core.guard#_lDhcsGSlEeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges+" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="status" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="declined_bookings'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges+" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges+" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking∈accepted_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_IWEgkWHCEeOMZ_9HrMlueQ|org.eventb.core.guard#_44654mPhEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="status∈STATUS" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_IWEgkWHCEeOMZ_9HrMlueQ|org.eventb.core.guard#_446542PhEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="status∈{decline}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_IWEgkWHCEeOMZ_9HrMlueQ|org.eventb.core.guard#_44655GPhEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="driver_declined=1" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_IWEgkWHCEeOMZ_9HrMlueQ|org.eventb.core.guard#_23KyoGPjEeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges," org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="busy_taxis'" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="declined_bookings'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="booking_taxi'" org.eventb.core.type="ℙ(BOOKING×TAXI)"/>
+<org.eventb.core.poIdentifier name="taxi" org.eventb.core.type="TAXI"/>
+<org.eventb.core.poIdentifier name="bookings'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+<org.eventb.core.poIdentifier name="penalized_taxis'" org.eventb.core.type="ℙ(TAXI)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges," org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges," org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking∈declined_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o}|org.eventb.core.guard#_iUj6IWP3EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="taxi∈busy_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o}|org.eventb.core.guard#_iUj6ImP3EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="booking ↦ taxi∈booking_taxi" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o}|org.eventb.core.guard#_iUj6I2P3EeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges-" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="taxi" org.eventb.core.type="TAXI"/>
+<org.eventb.core.poIdentifier name="penalized_taxis'" org.eventb.core.type="ℙ(TAXI)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges-" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges-" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="taxi∈penalized_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_akC7MGSnEeOMwK6AbUC7eA|org.eventb.core.guard#_akDiQmSnEeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges." org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="status" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="waiting_list'" org.eventb.core.type="ℙ(BOOKING×CUSTOMER)"/>
+<org.eventb.core.poIdentifier name="response" org.eventb.core.type="RESPONSE_TYPE"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+<org.eventb.core.poIdentifier name="customer" org.eventb.core.type="CUSTOMER"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges." org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges." org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking∈accepted_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o~|org.eventb.core.guard#_qQxtVGP4EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="customer∈CUSTOMER" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o~|org.eventb.core.guard#_qQxtVWP4EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="booking ↦ customer∈booking_customer" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o~|org.eventb.core.guard#_qQxtVmP4EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="status∈STATUS" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o~|org.eventb.core.guard#_265PgGP4EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="status∈{pending}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o~|org.eventb.core.guard#_265PgWP4EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="response∈RESPONSE_TYPE" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o~|org.eventb.core.guard#_265PgmP4EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="response∈{full_response}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0o~|org.eventb.core.guard#_265Pg2P4EeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges/" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="newStatus" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="status" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="booking_status'" org.eventb.core.type="ℙ(BOOKING×STATUS)"/>
+<org.eventb.core.poIdentifier name="waiting_list'" org.eventb.core.type="ℙ(BOOKING×CUSTOMER)"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+<org.eventb.core.poIdentifier name="customer" org.eventb.core.type="CUSTOMER"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges/" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges\/" org.eventb.core.poStamp="31">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking∈accepted_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p'|org.eventb.core.guard#_TU9cYmP5EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="customer∈CUSTOMER" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p'|org.eventb.core.guard#_TU9cY2P5EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="booking ↦ customer∈waiting_list" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p'|org.eventb.core.guard#_TU9cZGP5EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="status∈STATUS∧newStatus∈STATUS" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p'|org.eventb.core.guard#_g9fHkWP5EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="status∈{pending}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p'|org.eventb.core.guard#_g9fHkmP5EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="newStatus∈{accept}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p'|org.eventb.core.guard#_vQX-YGP5EeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="booking ↦ status∈booking_status" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p'|org.eventb.core.guard#_H9_VgGToEeOu3s7xa_4yiA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges0" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="booking_status'" org.eventb.core.type="ℙ(BOOKING×STATUS)"/>
+<org.eventb.core.poIdentifier name="statusOLD" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="statusNEW" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges0" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges0" org.eventb.core.poStamp="24">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking∈accepted_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_iQvoEGA8EeO1XKzafDR8AA|org.eventb.core.guard#_dGYcMmBhEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="booking∉declined_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_iQvoEGA8EeO1XKzafDR8AA|org.eventb.core.guard#_dGYcM2BhEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="statusOLD∈STATUS∧statusNEW∈STATUS" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_iQvoEGA8EeO1XKzafDR8AA|org.eventb.core.guard#_dGYcNGBhEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="statusOLD∈{accept}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_iQvoEGA8EeO1XKzafDR8AA|org.eventb.core.guard#_4U_ikGBhEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="driver_declined=0" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_iQvoEGA8EeO1XKzafDR8AA|org.eventb.core.guard#_dGYcNWBhEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="statusNEW∈{coming}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_iQvoEGA8EeO1XKzafDR8AA|org.eventb.core.guard#_ysbeoWHBEeOMZ_9HrMlueQ"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="booking ↦ statusOLD∈booking_status" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_iQvoEGA8EeO1XKzafDR8AA|org.eventb.core.guard#_YQ-28GSoEeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges1" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="booking_status'" org.eventb.core.type="ℙ(BOOKING×STATUS)"/>
+<org.eventb.core.poIdentifier name="statusOLD" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="statusNEW" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges1" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges1" org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking∈accepted_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_jVSOQGA8EeO1XKzafDR8AA|org.eventb.core.guard#__bWhQ2BhEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="booking∉declined_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_jVSOQGA8EeO1XKzafDR8AA|org.eventb.core.guard#__bXIUGBhEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="statusOLD∈STATUS∧statusNEW∈STATUS" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_jVSOQGA8EeO1XKzafDR8AA|org.eventb.core.guard#__bXIUWBhEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="statusOLD∈{coming}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_jVSOQGA8EeO1XKzafDR8AA|org.eventb.core.guard#__bXIUmBhEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="statusNEW∈{picked}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_jVSOQGA8EeO1XKzafDR8AA|org.eventb.core.guard#__bXIU2BhEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="booking ↦ statusOLD∈booking_status" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_jVSOQGA8EeO1XKzafDR8AA|org.eventb.core.guard#_j4n-kGSfEeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges2" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="booking_status'" org.eventb.core.type="ℙ(BOOKING×STATUS)"/>
+<org.eventb.core.poIdentifier name="statusOLD" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="statusNEW" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges2" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges2" org.eventb.core.poStamp="26">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking∈accepted_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p+|org.eventb.core.guard#_FBCXY2BiEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="booking∉declined_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p+|org.eventb.core.guard#_FBCXZGBiEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="statusOLD∈STATUS∧statusNEW∈STATUS" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p+|org.eventb.core.guard#_FBCXZWBiEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="statusOLD∈{picked}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p+|org.eventb.core.guard#_FBCXZmBiEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="statusNEW∈{delivered}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p+|org.eventb.core.guard#_FBCXZ2BiEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="booking ↦ statusOLD∈booking_status" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p+|org.eventb.core.guard#_j4n-kWSfEeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges3" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="reduce_warning" org.eventb.core.type="WARNING"/>
+<org.eventb.core.poIdentifier name="reduced_warnings'" org.eventb.core.type="ℙ(WARNING)"/>
+<org.eventb.core.poIdentifier name="response" org.eventb.core.type="RESPONSE_TYPE"/>
+<org.eventb.core.poIdentifier name="count_reduced" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges3" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges3" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="response∈RESPONSE_TYPE" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p,|org.eventb.core.guard#_nwfjk2BjEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="response∈{reduced_response}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p,|org.eventb.core.guard#_nwfjlGBjEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="count_reduced∈ℕ1" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p,|org.eventb.core.guard#_nwgKoGBjEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="count_reduced=card(booking_response ▷ {response})" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p,|org.eventb.core.guard#_1ZBOwGBjEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="count_reduced≥reduced_threshold" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p,|org.eventb.core.guard#_une-oGBlEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="reduce_warning∈WARNING" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p,|org.eventb.core.guard#_IzWkEGCyEeO1XKzafDR8AA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges4" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="reduced_warning" org.eventb.core.type="WARNING"/>
+<org.eventb.core.poIdentifier name="reduced_warnings'" org.eventb.core.type="ℙ(WARNING)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges4" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges4" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="reduced_warning∈WARNING" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p-|org.eventb.core.guard#_hqHUMWCwEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="reduced_warning∈reduced_warnings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p-|org.eventb.core.guard#_hqHUMmCwEeO1XKzafDR8AA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges5" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="status" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="nonallocation_warnings'" org.eventb.core.type="ℙ(WARNING)"/>
+<org.eventb.core.poIdentifier name="nonallocated_warning" org.eventb.core.type="WARNING"/>
+<org.eventb.core.poIdentifier name="count_nonallocated" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges5" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges5" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="status∈STATUS" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p.|org.eventb.core.guard#_IzWkFGCyEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="status∈{open}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p.|org.eventb.core.guard#_IzWkFWCyEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="count_nonallocated∈ℕ" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p.|org.eventb.core.guard#_IzWkFmCyEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="count_nonallocated=card(booking_status ▷ {open})" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p.|org.eventb.core.guard#_IzXLIGCyEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="count_nonallocated≥nonallocation_threshold" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p.|org.eventb.core.guard#_IzXLIWCyEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="nonallocated_warning∈WARNING" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p.|org.eventb.core.guard#_IzXLImCyEeO1XKzafDR8AA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges6" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="nonallocation_warnings'" org.eventb.core.type="ℙ(WARNING)"/>
+<org.eventb.core.poIdentifier name="non_allocated_warning" org.eventb.core.type="WARNING"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges6" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges6" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="non_allocated_warning∈WARNING" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p\/|org.eventb.core.guard#_dsrjYWCyEeO1XKzafDR8AA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="non_allocated_warning∈nonallocation_warnings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_UrVNEVpvEeOf2_JL3Fy0p\/|org.eventb.core.guard#_ljZA8GCyEeO1XKzafDR8AA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="RemoveBooking/inv24/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTALLHYPbooking_number_of_passenges7"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{booking} ⩤ booking_location∈BOOKING ⤔ LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_e5dfcGSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_RnY5EGBQEeO1XKzafDR8AA"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AU"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_e5dfcGSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poSequent#RemoveBooking\/inv24\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="RemoveBooking/inv26/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTALLHYPbooking_number_of_passenges7"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{customer} ⩤ customer_location∈CUSTOMER ⤔ LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgwqwGSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_RnY5EGBQEeO1XKzafDR8AA"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AU"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgwqwGSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poSequent#RemoveBooking\/inv26\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="RemoveBooking/inv27/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTALLHYPbooking_number_of_passenges7"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{booking} ⩤ booking_triptype∈BOOKING ⤔ TRIP_TYPE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgxR0GSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_RnY5EGBQEeO1XKzafDR8AA"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.event#_gOZ8cGC2EeO1XKzafDR8AU"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgxR0GSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poSequent#RemoveBooking\/inv27\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges7" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="28">
+<org.eventb.core.poIdentifier name="busy_taxis'" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="accepted_bookings'" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="status" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="booking_status'" org.eventb.core.type="ℙ(BOOKING×STATUS)"/>
+<org.eventb.core.poIdentifier name="booking_taxi'" org.eventb.core.type="ℙ(BOOKING×TAXI)"/>
+<org.eventb.core.poIdentifier name="booking_triptype'" org.eventb.core.type="ℙ(BOOKING×TRIP_TYPE)"/>
+<org.eventb.core.poIdentifier name="bookings_pointer'" org.eventb.core.type="ℙ(BOOKING×ℤ)"/>
+<org.eventb.core.poIdentifier name="booking_location'" org.eventb.core.type="ℙ(BOOKING×LOCATION)"/>
+<org.eventb.core.poIdentifier name="booking_number_of_passengers'" org.eventb.core.type="ℙ(BOOKING×ℤ)"/>
+<org.eventb.core.poIdentifier name="booking_priority'" org.eventb.core.type="ℙ(BOOKING×PRIORITY)"/>
+<org.eventb.core.poIdentifier name="taxi" org.eventb.core.type="TAXI"/>
+<org.eventb.core.poIdentifier name="booking_response'" org.eventb.core.type="ℙ(BOOKING×RESPONSE_TYPE)"/>
+<org.eventb.core.poIdentifier name="booking_customer'" org.eventb.core.type="ℙ(BOOKING×CUSTOMER)"/>
+<org.eventb.core.poIdentifier name="booking_capability'" org.eventb.core.type="ℙ(BOOKING×CAPABILITY)"/>
+<org.eventb.core.poIdentifier name="customer_location'" org.eventb.core.type="ℙ(CUSTOMER×LOCATION)"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+<org.eventb.core.poIdentifier name="customer" org.eventb.core.type="CUSTOMER"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges7" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges7" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking∈accepted_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_RnY5EGBQEeO1XKzafDR8AA|org.eventb.core.guard#_eKC8ImPkEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="booking∉declined_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_RnY5EGBQEeO1XKzafDR8AA|org.eventb.core.guard#_hJSUcGPkEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="status∈STATUS" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_RnY5EGBQEeO1XKzafDR8AA|org.eventb.core.guard#_eKC8I2PkEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="status∈{delivered}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_RnY5EGBQEeO1XKzafDR8AA|org.eventb.core.guard#_eKC8JGPkEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="booking ↦ status∈booking_status" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_RnY5EGBQEeO1XKzafDR8AA|org.eventb.core.guard#_ni9zUWPkEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="taxi∈busy_taxis" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_RnY5EGBQEeO1XKzafDR8AA|org.eventb.core.guard#_n5cuwWPmEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="customer∈CUSTOMER" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_RnY5EGBQEeO1XKzafDR8AA|org.eventb.core.guard#_9ydCYGPmEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="booking ↦ customer∈booking_customer" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_RnY5EGBQEeO1XKzafDR8AA|org.eventb.core.guard#_fok9UGStEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="booking ↦ taxi∈booking_taxi" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_RnY5EGBQEeO1XKzafDR8AA|org.eventb.core.guard#_gyZtgGTsEeOu3s7xa_4yiA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTbooking_number_of_passenges8" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="status" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="priority" org.eventb.core.type="PRIORITY"/>
+<org.eventb.core.poIdentifier name="newPriority" org.eventb.core.type="PRIORITY"/>
+<org.eventb.core.poIdentifier name="booking_priority'" org.eventb.core.type="ℙ(BOOKING×PRIORITY)"/>
+<org.eventb.core.poIdentifier name="booking" org.eventb.core.type="BOOKING"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPbooking_number_of_passenges8" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#EVTIDENTbooking_number_of_passenges8" org.eventb.core.poStamp="36">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking∈accepted_bookings" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_CGDscGUiEeOu3s7xa_4yiA|org.eventb.core.guard#_CGDsdWUiEeOu3s7xa_4yiA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="priority∈PRIORITY∨newPriority∈PRIORITY" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_CGDscGUiEeOu3s7xa_4yiA|org.eventb.core.guard#_CGDsdmUiEeOu3s7xa_4yiA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="priority∈{normal}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_CGDscGUiEeOu3s7xa_4yiA|org.eventb.core.guard#_CGDsd2UiEeOu3s7xa_4yiA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="status∈STATUS" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_CGDscGUiEeOu3s7xa_4yiA|org.eventb.core.guard#_CGDseGUiEeOu3s7xa_4yiA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="status∈{pending}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_CGDscGUiEeOu3s7xa_4yiA|org.eventb.core.guard#_CGETgGUiEeOu3s7xa_4yiA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="newPriority∈{high}" org.eventb.core.source="/TaxiService/TaxiMachine.bum|org.eventb.core.machineFile#TaxiMachine|org.eventb.core.event#_CGDscGUiEeOu3s7xa_4yiA|org.eventb.core.guard#_CGETgWUiEeOu3s7xa_4yiA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/TaxiService/TaxiMachineRefined.bpo|org.eventb.core.poFile#TaxiMachineRefined|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="booking_location∈BOOKING ⤔ LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_e5dfcGSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="taxi_location∈registered_taxis ⤔ LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_e5dfcWSrEeO0z68jQ4pw7Q"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="customer_location∈CUSTOMER ⤔ LOCATION" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgwqwGSqEeOMwK6AbUC7eA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="booking_triptype∈BOOKING ⤔ TRIP_TYPE" org.eventb.core.source="/TaxiService/TaxiMachineRefined.bum|org.eventb.core.machineFile#TaxiMachineRefined|org.eventb.core.invariant#_pgxR0GSqEeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="BOOKING" org.eventb.core.type="ℙ(BOOKING)"/>
+<org.eventb.core.poIdentifier name="CAPABILITY" org.eventb.core.type="ℙ(CAPABILITY)"/>
+<org.eventb.core.poIdentifier name="CUSTOMER" org.eventb.core.type="ℙ(CUSTOMER)"/>
+<org.eventb.core.poIdentifier name="LOCATION" org.eventb.core.type="ℙ(LOCATION)"/>
+<org.eventb.core.poIdentifier name="PRIORITY" org.eventb.core.type="ℙ(PRIORITY)"/>
+<org.eventb.core.poIdentifier name="RESPONSE_TYPE" org.eventb.core.type="ℙ(RESPONSE_TYPE)"/>
+<org.eventb.core.poIdentifier name="STATUS" org.eventb.core.type="ℙ(STATUS)"/>
+<org.eventb.core.poIdentifier name="TAXI" org.eventb.core.type="ℙ(TAXI)"/>
+<org.eventb.core.poIdentifier name="TRIP_TYPE" org.eventb.core.type="ℙ(TRIP_TYPE)"/>
+<org.eventb.core.poIdentifier name="WARNING" org.eventb.core.type="ℙ(WARNING)"/>
+<org.eventb.core.poIdentifier name="accept" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="coming" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="decline" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="delivered" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="distance" org.eventb.core.type="ℙ(LOCATION×LOCATION×ℤ)"/>
+<org.eventb.core.poIdentifier name="empty" org.eventb.core.type="TRIP_TYPE"/>
+<org.eventb.core.poIdentifier name="full_response" org.eventb.core.type="RESPONSE_TYPE"/>
+<org.eventb.core.poIdentifier name="high" org.eventb.core.type="PRIORITY"/>
+<org.eventb.core.poIdentifier name="long" org.eventb.core.type="TRIP_TYPE"/>
+<org.eventb.core.poIdentifier name="normal" org.eventb.core.type="PRIORITY"/>
+<org.eventb.core.poIdentifier name="open" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="pending" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="picked" org.eventb.core.type="STATUS"/>
+<org.eventb.core.poIdentifier name="reduced_response" org.eventb.core.type="RESPONSE_TYPE"/>
+<org.eventb.core.poIdentifier name="short" org.eventb.core.type="TRIP_TYPE"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/TaxiService/Taxi_Context.bpo|org.eventb.core.poFile#Taxi_Context|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(TRIP_TYPE,{short},{long},{empty})" org.eventb.core.source="/TaxiService/Taxi_Context.buc|org.eventb.core.contextFile#Taxi_Context|org.eventb.core.axiom#:"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(PRIORITY,{high},{normal})" org.eventb.core.source="/TaxiService/Taxi_Context.buc|org.eventb.core.contextFile#Taxi_Context|org.eventb.core.axiom#;"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(STATUS,{open},{pending},{accept},{decline},{coming},{picked},{delivered})" org.eventb.core.source="/TaxiService/Taxi_Context.buc|org.eventb.core.contextFile#Taxi_Context|org.eventb.core.axiom#="/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="partition(RESPONSE_TYPE,{full_response},{reduced_response})" org.eventb.core.source="/TaxiService/Taxi_Context.buc|org.eventb.core.contextFile#Taxi_Context|org.eventb.core.axiom#&gt;"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="distance∈LOCATION × LOCATION → ℕ1" org.eventb.core.source="/TaxiService/Taxi_Context.buc|org.eventb.core.contextFile#Taxi_Context|org.eventb.core.axiom#_j_rE8GSjEeOMwK6AbUC7eA"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>
